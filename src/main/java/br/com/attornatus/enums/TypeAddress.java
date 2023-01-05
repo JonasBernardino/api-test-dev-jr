@@ -1,7 +1,8 @@
 package br.com.attornatus.enums;
 
 public enum TypeAddress {
-    ADDRESS(0, "principal");
+    SIM(0, "main"),
+    NAO(1, "secondary");
 
     private Integer code;
     private String type;
