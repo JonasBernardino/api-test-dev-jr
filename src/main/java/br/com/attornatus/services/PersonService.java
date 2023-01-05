@@ -27,11 +27,8 @@ public class PersonService {
         return personRepository.findAll();
     }
 
-    public Person post(Person person, Address address) {
-        List<Address> list = new ArrayList<Address>();
-        list.add(address);
+    public Person post(Person person) {
         person.setId(null);
-        person.setAddressList(list);
         Person personSave = personRepository.save(person);
         return personSave;
     }

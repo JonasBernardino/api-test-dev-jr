@@ -44,6 +44,7 @@ public class AddressService {
         address.setPerson(person);
         return addressRepository.save(address);
     }
+
     private void updateData(Address newAddress, Address address) {
         newAddress.setStreet(address.getStreet());
         newAddress.setZipCode(address.getZipCode());
@@ -51,13 +52,15 @@ public class AddressService {
         newAddress.setCity(address.getCity());
         newAddress.setTypeAddress(address.getTypeAddress());
     }
-    public Address update(Long id, Address address){
+
+    public Address update(Long id, Address address) {
         address.setId(null);
         Address newAddress = findById(id);
         updateData(newAddress, address);
-        return  addressRepository.save(newAddress);
+        return addressRepository.save(newAddress);
     }
-    public void delete(Long id){
+
+    public void delete(Long id) {
         final Address address = findById(id);
         addressRepository.delete(address);
     }
